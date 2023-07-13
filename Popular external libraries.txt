@@ -1,0 +1,43 @@
+Chakra UI
+---------
+HStack / Vstack: spacing
+Box: bg, border, shadow
+Heading: as='hX' (X=1-6), size='2x1'
+Text: fontSize='lg'
+
+<HStack spacing='16px'>
+  <Box h='40px' bg='yellow.200'>
+    1
+  </Box>
+  <Box h='40px' bg='tomato'>
+    2
+  </Box>
+  <Box h='40px' bg='pink.100'>
+    3
+  </Box>
+</HStack>
+
+
+Formik / Yup
+------------
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
+
+// The below code would go inside a React component
+const {
+  values,
+  errors,
+  touched,
+getFieldProps,
+handleSubmit,
+} = useFormik({
+intialValues: {
+    comment: "",
+  },
+onSubmit: (values) => {
+    // Handle form submission
+  },
+validationSchema: Yup.object({
+    comment: Yup.string().required("Required"),
+  }),
+});
